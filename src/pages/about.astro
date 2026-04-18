@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CTA from '../components/CTA.astro';
+---
+
+<Layout
+  title="About"
+  description="Meet the founder — a Baltimore-based web designer focused exclusively on helping local small businesses get found online and win more customers."
+>
+  <!-- INTRO -->
+  <section class="bg-cream py-16 md:py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+        <!-- Photo -->
+        <div class="md:col-span-1">
+          <!-- TODO: Replace with a real founder headshot. Recommended: professional but approachable, Baltimore background preferred, 600x700px minimum. -->
+          <div class="bg-navy-light rounded-xl aspect-[3/4] flex items-center justify-center text-white opacity-30 border-2 border-dashed border-navy" role="img" aria-label="Founder photo placeholder">
+            <div class="text-center text-sm px-4">
+              <p>TODO: Founder photo</p>
+              <p class="text-xs mt-1">600x700px recommended</p>
+            </div>
+          </div>
+          <p class="text-center text-sm text-muted mt-3">
+            [Your Name] — Baltimore, MD
+            <!-- TODO: replace [Your Name] -->
+          </p>
+        </div>
+
+        <!-- Bio -->
+        <div class="md:col-span-2">
+          <h1 class="text-3xl md:text-4xl text-ink mb-8">About this business.</h1>
+
+          <!-- TODO: Replace all three paragraphs below with your own story in your own voice. -->
+          <div class="space-y-5 text-muted leading-relaxed">
+            <p>
+              <!-- TODO: Write 3–5 sentences about why you started this. Something like: "I've been building websites for [X] years. I started Shmoney because I kept seeing small businesses in Baltimore get ripped off by agencies that charged $10k for a site that looked like it was built in 2011 and then disappeared. I thought there had to be a better way." -->
+              [TODO: Write your founding story here. Why did you start this? What frustrated you about how things were being done? What did you see happening to small businesses? Be specific — the more specific, the more credible.]
+            </p>
+            <p>
+              <!-- TODO: Write about your Baltimore connection. Why here specifically? Do you live here? Did you grow up here? Do you know the neighborhoods? Something like: "I grew up in Hampden. I know what it's like to watch a neighborhood business struggle. I know the difference between Highlandtown and Hunt Valley and why that matters for how you market yourself." -->
+              [TODO: Write about your Baltimore connection. Specificity matters — neighborhoods, corridors, communities you know personally.]
+            </p>
+            <p>
+              <!-- TODO: Write about the kind of clients you want to work with. Something like: "I want to work with owner-operators — people who answer their own phones, who know every regular customer by name, who take real pride in their work. Not companies looking to 'scale their digital presence.' Real businesses doing real things for real people in Baltimore." -->
+              [TODO: Write about the kind of clients you want. Who energizes you? What kind of work makes you feel like it matters?]
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY I'M DOING THIS -->
+  <section class="bg-white py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl text-ink mb-6">Why I'm doing this — and why it's new.</h2>
+      <div class="space-y-5 text-muted leading-relaxed">
+        <p>
+          Yes, this business is new. I don't have a portfolio of 50 client sites to show you. What I have is the skills to build a great site, a guarantee that removes your financial risk entirely, and a genuine interest in seeing Baltimore small businesses compete online the way they deserve to.
+        </p>
+        <p>
+          The guarantee isn't a marketing gimmick. It's how I'm choosing to stand behind my work at a stage where you have no reason to trust me yet. Live in 21 days or full refund. Not happy 30 days after launch? Full refund, plus I'll transfer your site to you free. That's real money on the line for me — which is exactly the point.
+        </p>
+        <p>
+          If you're one of the first five clients, you're also getting the founding client pricing — $1,500 build and $99/month — in exchange for a testimonial and permission to use your site as a case study. That's the deal, stated plainly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT I BELIEVE -->
+  <section class="bg-cream py-16 md:py-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl text-ink mb-8">What I believe.</h2>
+      <dl class="space-y-6">
+        {[
+          {
+            term: 'A website should make you money, not just look nice.',
+            detail: 'Design is a means to an end. The end is customers calling, booking, or buying. Every decision gets made with that lens.',
+          },
+          {
+            term: 'Clients should own their site. Always.',
+            detail: "Your domain is in your name. Your files are yours. You're not renting from me — I'm building something for you.",
+          },
+          {
+            term: 'Local businesses deserve the same quality big companies pay for.',
+            detail: "A plumber in Dundalk deserves a fast, professional website just as much as a firm in Harbor East. The budget is different; the quality doesn't have to be.",
+          },
+          {
+            term: 'Transparent pricing is a form of respect.',
+            detail: "If I can't tell you what it costs upfront, something's wrong. You shouldn't have to sit through a sales call to find out if you can afford to work with me.",
+          },
+          {
+            term: 'Plain language is a professional standard.',
+            detail: "I'll never use jargon you have to Google. If I can't explain it simply, I haven't understood it well enough.",
+          },
+        ].map(({ term, detail }) => (
+          <div class="flex gap-4">
+            <span class="shrink-0 mt-1 text-success" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+            </span>
+            <div>
+              <dt class="font-bold text-ink mb-1" style="font-family: var(--font-sans);">{term}</dt>
+              <dd class="text-muted text-sm leading-relaxed">{detail}</dd>
+            </div>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <CTA
+    heading="Want to work together?"
+    subheading="Let's start with a free 15-minute call. No pitch, no pressure — just a conversation."
+    primaryText="Book a call"
+    primaryHref="https://calendly.com/TODO"
+    secondaryText="Or request a free audit"
+    secondaryHref="/audit"
+    theme="dark"
+  />
+  <!-- TODO: Replace Calendly URL above with your real booking link -->
+</Layout>

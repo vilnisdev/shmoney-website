@@ -1,0 +1,83 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  noIndex?: boolean;
+  jsonLd?: object;
+}
+
+const {
+  title,
+  description,
+  ogImage = '/og-default.png', // TODO: create /public/og-default.png (1200x630)
+  noIndex = false,
+  jsonLd,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
+const fullTitle = `${title} | Shmoney Web Design`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {noIndex && <meta name="robots" content="noindex" />}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Shmoney Web Design" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- JSON-LD Structured Data -->
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+
+    <!-- Analytics placeholder -->
+    <!-- TODO: uncomment and set data-domain once Plausible or Umami account is created -->
+    <!-- <script defer data-domain="shmoneywebdesign.com" src="https://plausible.io/js/script.js"></script> -->
+
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <!-- Skip to main content for keyboard/screen reader users -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-navy focus:px-4 focus:py-2 focus:rounded focus:font-semibold"
+    >
+      Skip to main content
+    </a>
+
+    <Nav />
+
+    <main id="main-content" class="flex-1">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,200 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const accessKey = import.meta.env.PUBLIC_FORM_ENDPOINT;
+---
+
+<Layout
+  title="Free Website Audit for Baltimore Businesses"
+  description="Get a free 15-point website audit: speed test, search ranking check, competitor comparison, and specific recommendations — no sales pitch."
+>
+  <!-- HERO -->
+  <section class="bg-cream py-14 md:py-20 px-4 border-b border-gray-200">
+    <div class="max-w-2xl mx-auto text-center">
+      <h1 class="text-3xl md:text-4xl text-ink mb-4">Get a free website audit.</h1>
+      <p class="text-muted leading-relaxed mb-8">
+        Tell us about your business and we'll send you a real, specific audit within 2 business days — not a generic checklist, not a sales pitch.
+      </p>
+      <ul class="flex flex-col sm:flex-row gap-4 justify-center text-sm font-medium" role="list">
+        {[
+          'Mobile and desktop speed test',
+          'Search ranking check',
+          'Competitor comparison',
+        ].map(item => (
+          <li class="flex items-center gap-2 text-muted">
+            <svg class="shrink-0 text-success" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="py-14 md:py-20 px-4">
+    <div class="max-w-xl mx-auto">
+      <form id="audit-form" novalidate class="space-y-6">
+        <input type="hidden" name="access_key" value={accessKey} />
+        <input type="hidden" name="subject" value="New Website Audit Request — Shmoney Web Design" />
+        <!-- Honeypot spam prevention -->
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true" />
+
+        <div>
+          <label for="business-name" class="block text-sm font-semibold text-ink mb-1.5">Business name <span class="text-red-500" aria-hidden="true">*</span></label>
+          <input
+            type="text"
+            id="business-name"
+            name="business_name"
+            required
+            autocomplete="organization"
+            class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm text-ink bg-white focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy"
+            placeholder="e.g., Canton Plumbing & Heating"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-ink mb-1.5">Existing website</label>
+          <div class="flex items-center gap-3 mb-2">
+            <input
+              type="checkbox"
+              id="no-website"
+              name="no_website"
+              class="w-4 h-4 text-navy rounded border-gray-300 focus:ring-navy"
+            />
+            <label for="no-website" class="text-sm text-muted cursor-pointer">I don't have a website yet</label>
+          </div>
+          <input
+            type="url"
+            id="website-url"
+            name="website_url"
+            autocomplete="url"
+            class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm text-ink bg-white focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy"
+            placeholder="https://yourbusiness.com"
+          />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-semibold text-ink mb-1.5">Email address <span class="text-red-500" aria-hidden="true">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm text-ink bg-white focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy"
+            placeholder="you@yourbusiness.com"
+          />
+        </div>
+
+        <div>
+          <label for="phone" class="block text-sm font-semibold text-ink mb-1.5">Phone number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            autocomplete="tel"
+            class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm text-ink bg-white focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy"
+            placeholder="(410) 555-0100"
+          />
+        </div>
+
+        <div>
+          <label for="goal" class="block text-sm font-semibold text-ink mb-1.5">What's the biggest problem you're hoping a website would solve?</label>
+          <textarea
+            id="goal"
+            name="goal"
+            rows="4"
+            class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm text-ink bg-white focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy resize-y"
+            placeholder="e.g., I'm not showing up on Google, or people call asking if we're still open..."
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          id="audit-btn"
+          class="w-full bg-navy text-white px-6 py-3.5 rounded font-semibold text-base hover:bg-navy-dark transition-colors focus-visible:outline-2 focus-visible:outline-navy disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          Send my audit request
+        </button>
+
+        <div
+          id="audit-result"
+          role="status"
+          aria-live="polite"
+          class="hidden text-sm text-center p-4 rounded"
+        ></div>
+      </form>
+
+      <!-- What the audit includes -->
+      <div class="mt-14 pt-10 border-t border-gray-200">
+        <h2 class="text-xl font-bold text-ink mb-4">What's in the audit?</h2>
+        <ul class="space-y-3 text-sm text-muted" role="list">
+          {[
+            'Mobile and desktop speed test — with exact scores and what they mean for your business',
+            'Search ranking check for your main services in Baltimore',
+            'Competitor comparison against up to 3 local competitors',
+            'Specific recommendations — not generic advice you could find on a blog',
+            'No sales pitch unless you ask for one',
+          ].map(item => (
+            <li class="flex items-start gap-3">
+              <svg class="mt-0.5 shrink-0 text-success" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const form = document.getElementById('audit-form') as HTMLFormElement;
+  const result = document.getElementById('audit-result') as HTMLDivElement;
+  const btn = document.getElementById('audit-btn') as HTMLButtonElement;
+  const noWebsite = document.getElementById('no-website') as HTMLInputElement;
+  const urlInput = document.getElementById('website-url') as HTMLInputElement;
+
+  // Toggle URL field when "no website" checked
+  noWebsite?.addEventListener('change', () => {
+    urlInput.disabled = noWebsite.checked;
+    urlInput.classList.toggle('opacity-40', noWebsite.checked);
+    if (noWebsite.checked) urlInput.value = '';
+  });
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    result.className = 'text-sm text-center p-4 rounded text-muted';
+    result.textContent = 'Submitting your request...';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      });
+      const json = await res.json();
+
+      if (res.ok) {
+        result.className = 'text-sm text-center p-4 rounded bg-green-50 text-green-700';
+        result.textContent =
+          "Thanks — we'll send your audit within 2 business days. Keep an eye on your inbox (and spam folder just in case).";
+        form.reset();
+      } else {
+        throw new Error(json.message || 'Submission failed');
+      }
+    } catch {
+      result.className = 'text-sm text-center p-4 rounded bg-red-50 text-red-700';
+      result.textContent =
+        'Something went wrong. Please email us directly at [Email] and we\'ll get you sorted.'; // TODO: replace [Email]
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send my audit request';
+    }
+  });
+</script>

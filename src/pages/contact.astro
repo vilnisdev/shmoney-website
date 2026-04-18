@@ -1,0 +1,200 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const accessKey = import.meta.env.PUBLIC_FORM_ENDPOINT;
+---
+
+<Layout
+  title="Contact"
+  description="Get in touch to book a free 15-minute call or ask a question. Baltimore-based, serving local businesses across the metro area."
+>
+  <section class="bg-cream py-16 md:py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="max-w-2xl mb-10">
+        <h1 class="text-3xl md:text-4xl text-ink mb-4">Get in touch.</h1>
+        <p class="text-muted leading-relaxed">
+          Have a question, want to talk through a project, or just want to see if we're a good fit? Reach out — we respond within one business day.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
+        <!-- Contact Form -->
+        <div class="lg:col-span-3">
+          <form id="contact-form" novalidate class="space-y-5 bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+            <input type="hidden" name="access_key" value={accessKey} />
+            <input type="hidden" name="subject" value="New Contact Form Message — Shmoney Web Design" />
+            <!-- Honeypot spam prevention -->
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true" />
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="name" class="block text-sm font-semibold text-ink mb-1.5">Name <span class="text-red-500" aria-hidden="true">*</span></label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                  class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm text-ink bg-white focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label for="phone-contact" class="block text-sm font-semibold text-ink mb-1.5">Phone</label>
+                <input
+                  type="tel"
+                  id="phone-contact"
+                  name="phone"
+                  autocomplete="tel"
+                  class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm text-ink bg-white focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy"
+                  placeholder="(410) 555-0100"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="email-contact" class="block text-sm font-semibold text-ink mb-1.5">Email <span class="text-red-500" aria-hidden="true">*</span></label>
+              <input
+                type="email"
+                id="email-contact"
+                name="email"
+                required
+                autocomplete="email"
+                class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm text-ink bg-white focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy"
+                placeholder="you@yourbusiness.com"
+              />
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-semibold text-ink mb-1.5">Message <span class="text-red-500" aria-hidden="true">*</span></label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="5"
+                class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm text-ink bg-white focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy resize-y"
+                placeholder="Tell us about your business and what you're looking for..."
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              id="contact-btn"
+              class="w-full bg-navy text-white px-6 py-3.5 rounded font-semibold text-base hover:bg-navy-dark transition-colors focus-visible:outline-2 focus-visible:outline-navy disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              Send message
+            </button>
+
+            <div
+              id="contact-result"
+              role="status"
+              aria-live="polite"
+              class="hidden text-sm text-center p-4 rounded"
+            ></div>
+          </form>
+        </div>
+
+        <!-- Sidebar: other ways to connect -->
+        <div class="lg:col-span-2 space-y-6">
+          <!-- Calendly -->
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h2 class="text-lg font-bold text-ink mb-2" style="font-family: var(--font-sans);">Prefer to talk?</h2>
+            <p class="text-sm text-muted mb-4">Book a free 15-minute call. No pitch — just a conversation about your business.</p>
+            <!-- TODO: Replace href with your real Calendly booking link -->
+            <a
+              href="https://calendly.com/TODO"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block bg-navy text-white text-sm font-semibold text-center px-5 py-3 rounded hover:bg-navy-dark transition-colors focus-visible:outline-2 focus-visible:outline-navy"
+            >
+              Book a 15-minute call
+            </a>
+          </div>
+
+          <!-- Direct contact -->
+          <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+            <h2 class="text-lg font-bold text-ink mb-4" style="font-family: var(--font-sans);">Direct contact</h2>
+            <ul class="space-y-3 text-sm" role="list">
+              <li class="flex items-start gap-3">
+                <svg class="shrink-0 mt-0.5 text-navy" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                </svg>
+                <div>
+                  <span class="text-muted">Email</span>
+                  <br />
+                  <!-- TODO: Replace with your real email address -->
+                  <a href="mailto:[Email]" class="text-navy font-medium hover:underline">[Email]</a>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="shrink-0 mt-0.5 text-navy" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                </svg>
+                <div>
+                  <span class="text-muted">Phone</span>
+                  <br />
+                  <!-- TODO: Replace with your real phone number -->
+                  <a href="tel:[Phone]" class="text-navy font-medium hover:underline">[Phone]</a>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="shrink-0 mt-0.5 text-navy" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <span class="text-muted">Location</span>
+                  <br />
+                  <span class="text-ink">Baltimore, MD</span>
+                  <!-- TODO: Add specific neighborhood or address if you want -->
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <p class="text-xs text-muted px-1">
+            Serving Baltimore City and surrounding counties — Baltimore County, Howard County, Anne Arundel County, and Harford County.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const result = document.getElementById('contact-result') as HTMLDivElement;
+  const btn = document.getElementById('contact-btn') as HTMLButtonElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    result.className = 'text-sm text-center p-4 rounded text-muted';
+    result.textContent = 'Sending your message...';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      });
+      const json = await res.json();
+
+      if (res.ok) {
+        result.className = 'text-sm text-center p-4 rounded bg-green-50 text-green-700';
+        result.textContent = "Message sent — we'll get back to you within one business day.";
+        form.reset();
+      } else {
+        throw new Error(json.message || 'Submission failed');
+      }
+    } catch {
+      result.className = 'text-sm text-center p-4 rounded bg-red-50 text-red-700';
+      result.textContent =
+        'Something went wrong. Please email us directly at [Email].'; // TODO: replace [Email]
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send message';
+    }
+  });
+</script>
