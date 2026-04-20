@@ -9,7 +9,7 @@ const accessKey = import.meta.env.PUBLIC_FORM_ENDPOINT;
   description="Get a free 15-point website audit: speed test, search ranking check, competitor comparison, and specific recommendations — no sales pitch."
 >
   <!-- HERO -->
-  <section class="bg-cream py-14 md:py-20 px-4 border-b border-gray-200">
+  <section class="bg-cream dark:bg-bg py-14 md:py-20 px-4 border-b border-gray-200 dark:border-border">
     <div class="max-w-2xl mx-auto text-center">
       <h1 class="text-3xl md:text-4xl text-ink mb-4">Get a free website audit.</h1>
       <p class="text-muted leading-relaxed mb-8">
@@ -22,7 +22,7 @@ const accessKey = import.meta.env.PUBLIC_FORM_ENDPOINT;
           'Competitor comparison',
         ].map(item => (
           <li class="flex items-center gap-2 text-muted">
-            <svg class="shrink-0 text-success" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <svg class="shrink-0 text-success dark:text-navy-light" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
             </svg>
             {item}
@@ -33,7 +33,7 @@ const accessKey = import.meta.env.PUBLIC_FORM_ENDPOINT;
   </section>
 
   <!-- FORM -->
-  <section class="py-14 md:py-20 px-4">
+  <section class="bg-cream dark:bg-bg py-14 md:py-20 px-4">
     <div class="max-w-xl mx-auto">
       <form id="audit-form" novalidate class="space-y-6">
         <input type="hidden" name="access_key" value={accessKey} />
@@ -49,7 +49,7 @@ const accessKey = import.meta.env.PUBLIC_FORM_ENDPOINT;
             name="business_name"
             required
             autocomplete="organization"
-            class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm text-ink bg-white focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy"
+            class="w-full border border-gray-300 dark:border-border-2 rounded px-4 py-2.5 text-sm text-ink bg-white dark:bg-surface focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy dark:placeholder:text-subtle"
             placeholder="e.g., Canton Plumbing & Heating"
           />
         </div>
@@ -61,7 +61,7 @@ const accessKey = import.meta.env.PUBLIC_FORM_ENDPOINT;
               type="checkbox"
               id="no-website"
               name="no_website"
-              class="w-4 h-4 text-navy rounded border-gray-300 focus:ring-navy"
+              class="w-4 h-4 text-navy rounded border-gray-300 dark:border-border-2 dark:bg-surface focus:ring-navy"
             />
             <label for="no-website" class="text-sm text-muted cursor-pointer">I don't have a website yet</label>
           </div>
@@ -70,7 +70,7 @@ const accessKey = import.meta.env.PUBLIC_FORM_ENDPOINT;
             id="website-url"
             name="website_url"
             autocomplete="url"
-            class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm text-ink bg-white focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy"
+            class="w-full border border-gray-300 dark:border-border-2 rounded px-4 py-2.5 text-sm text-ink bg-white dark:bg-surface focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy dark:placeholder:text-subtle"
             placeholder="https://yourbusiness.com"
           />
         </div>
@@ -83,7 +83,7 @@ const accessKey = import.meta.env.PUBLIC_FORM_ENDPOINT;
             name="email"
             required
             autocomplete="email"
-            class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm text-ink bg-white focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy"
+            class="w-full border border-gray-300 dark:border-border-2 rounded px-4 py-2.5 text-sm text-ink bg-white dark:bg-surface focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy dark:placeholder:text-subtle"
             placeholder="you@yourbusiness.com"
           />
         </div>
@@ -95,7 +95,7 @@ const accessKey = import.meta.env.PUBLIC_FORM_ENDPOINT;
             id="phone"
             name="phone"
             autocomplete="tel"
-            class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm text-ink bg-white focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy"
+            class="w-full border border-gray-300 dark:border-border-2 rounded px-4 py-2.5 text-sm text-ink bg-white dark:bg-surface focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy dark:placeholder:text-subtle"
             placeholder="(410) 555-0100"
           />
         </div>
@@ -106,7 +106,7 @@ const accessKey = import.meta.env.PUBLIC_FORM_ENDPOINT;
             id="goal"
             name="goal"
             rows="4"
-            class="w-full border border-gray-300 rounded px-4 py-2.5 text-sm text-ink bg-white focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy resize-y"
+            class="w-full border border-gray-300 dark:border-border-2 rounded px-4 py-2.5 text-sm text-ink bg-white dark:bg-surface focus:outline-none focus:ring-2 focus:ring-navy focus:border-navy resize-y dark:placeholder:text-subtle"
             placeholder="e.g., I'm not showing up on Google, or people call asking if we're still open..."
           ></textarea>
         </div>
@@ -128,7 +128,7 @@ const accessKey = import.meta.env.PUBLIC_FORM_ENDPOINT;
       </form>
 
       <!-- What the audit includes -->
-      <div class="mt-14 pt-10 border-t border-gray-200">
+      <div class="mt-14 pt-10 border-t border-gray-200 dark:border-border">
         <h2 class="text-xl font-bold text-ink mb-4">What's in the audit?</h2>
         <ul class="space-y-3 text-sm text-muted" role="list">
           {[
@@ -139,7 +139,7 @@ const accessKey = import.meta.env.PUBLIC_FORM_ENDPOINT;
             'No sales pitch unless you ask for one',
           ].map(item => (
             <li class="flex items-start gap-3">
-              <svg class="mt-0.5 shrink-0 text-success" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <svg class="mt-0.5 shrink-0 text-success dark:text-navy-light" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
               {item}
