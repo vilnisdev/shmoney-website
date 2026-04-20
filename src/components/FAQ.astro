@@ -6,7 +6,7 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<div class="divide-y divide-gray-200 border-t border-b border-gray-200">
+<div class="divide-y divide-gray-200 dark:divide-border border-t border-b border-gray-200 dark:border-border">
   {items.map((item) => (
     <details name="faq" class="group py-5">
       <summary class="flex justify-between items-center gap-4 text-base font-semibold text-ink select-none">

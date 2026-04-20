@@ -84,9 +84,10 @@ const faqItems = [
   jsonLd={schema}
 >
   <!-- HERO -->
-  <section id="hero" class="bg-cream py-16 md:py-24 px-4">
+  <section id="hero" class="bg-cream dark:bg-bg py-16 md:py-24 px-4">
     <div class="max-w-5xl mx-auto">
       <div class="max-w-3xl">
+        <p class="hidden dark:block text-navy-light text-sm font-semibold uppercase tracking-widest mb-4">Baltimore Web Design</p>
         <h1 class="text-4xl md:text-5xl lg:text-6xl text-ink leading-tight mb-6">
           Baltimore small businesses deserve websites that actually bring in customers.
         </h1>
@@ -102,7 +103,7 @@ const faqItems = [
           </a>
           <a
             href="#pricing"
-            class="inline-block border-2 border-navy text-navy px-7 py-4 rounded font-semibold text-base hover:bg-navy hover:text-white transition-colors text-center focus-visible:outline-2 focus-visible:outline-navy"
+            class="inline-block border-2 border-navy text-navy dark:border-border-2 dark:text-muted px-7 py-4 rounded font-semibold text-base hover:bg-navy hover:text-white dark:hover:border-white dark:hover:text-white transition-colors text-center focus-visible:outline-2 focus-visible:outline-navy"
           >
             See pricing
           </a>
@@ -116,21 +117,21 @@ const faqItems = [
       </div>
 
       <!-- TODO: Replace with a real Baltimore photo (e.g., a local storefront on Eastern Ave or Charles St). Recommended: 1200x500px, your own photo preferred over stock. -->
-      <div class="mt-12 bg-navy-light rounded-xl h-64 md:h-80 flex items-center justify-center border-2 border-dashed border-navy" role="img" aria-label="Baltimore photo placeholder">
-        <p class="text-white opacity-40 text-sm text-center px-4">TODO: Replace with real Baltimore photo</p>
+      <div class="mt-12 bg-navy-light dark:bg-surface rounded-xl h-64 md:h-80 flex items-center justify-center border-2 border-dashed border-navy dark:border-border" role="img" aria-label="Baltimore photo placeholder">
+        <p class="text-white dark:text-subtle text-sm text-center px-4 opacity-40 dark:opacity-100">TODO: Replace with real Baltimore photo</p>
       </div>
     </div>
   </section>
 
   <!-- PROBLEM -->
-  <section id="problem" class="bg-white py-16 md:py-20 px-4">
+  <section id="problem" class="bg-white dark:bg-surface py-16 md:py-20 px-4">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl md:text-4xl text-ink mb-12 max-w-2xl">
         If your "website" is a Facebook page, you're losing customers every day.
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <div class="w-10 h-10 bg-cream rounded-lg flex items-center justify-center mb-4" aria-hidden="true">
+          <div class="w-10 h-10 bg-cream dark:bg-surface-2 rounded-lg flex items-center justify-center mb-4" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navy">
               <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
@@ -141,7 +142,7 @@ const faqItems = [
           </p>
         </div>
         <div>
-          <div class="w-10 h-10 bg-cream rounded-lg flex items-center justify-center mb-4" aria-hidden="true">
+          <div class="w-10 h-10 bg-cream dark:bg-surface-2 rounded-lg flex items-center justify-center mb-4" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navy">
               <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
             </svg>
@@ -152,7 +153,7 @@ const faqItems = [
           </p>
         </div>
         <div>
-          <div class="w-10 h-10 bg-cream rounded-lg flex items-center justify-center mb-4" aria-hidden="true">
+          <div class="w-10 h-10 bg-cream dark:bg-surface-2 rounded-lg flex items-center justify-center mb-4" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navy">
               <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
             </svg>
@@ -167,7 +168,7 @@ const faqItems = [
   </section>
 
   <!-- WHAT WE DO -->
-  <section id="services" class="bg-cream py-16 md:py-20 px-4">
+  <section id="services" class="bg-cream dark:bg-bg py-16 md:py-20 px-4">
     <div class="max-w-5xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         <div>
@@ -191,7 +192,7 @@ const faqItems = [
             'You review at two checkpoints before launch',
           ].map(item => (
             <li class="flex items-start gap-3">
-              <svg class="mt-0.5 shrink-0 text-success" width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <svg class="mt-0.5 shrink-0 text-success dark:text-navy-light" width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
               <span class="text-ink text-sm leading-relaxed">{item}</span>
@@ -203,7 +204,7 @@ const faqItems = [
   </section>
 
   <!-- PRICING -->
-  <section id="pricing" class="bg-white py-16 md:py-20 px-4">
+  <section id="pricing" class="bg-white dark:bg-surface py-16 md:py-20 px-4">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl text-ink mb-4">Straightforward pricing. No surprises.</h2>
@@ -241,7 +242,7 @@ const faqItems = [
   </section>
 
   <!-- GUARANTEE -->
-  <section id="guarantee" class="bg-cream py-16 md:py-20 px-4">
+  <section id="guarantee" class="bg-cream dark:bg-bg py-16 md:py-20 px-4">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-10">
         <h2 class="text-3xl md:text-4xl text-ink mb-4">If we don't deliver, you don't pay.</h2>
@@ -271,7 +272,7 @@ const faqItems = [
   </section>
 
   <!-- PROCESS -->
-  <section id="process" class="bg-white py-16 md:py-20 px-4">
+  <section id="process" class="bg-white dark:bg-surface py-16 md:py-20 px-4">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl md:text-4xl text-ink mb-12 text-center">How it works.</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -310,7 +311,7 @@ const faqItems = [
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="bg-cream py-16 md:py-20 px-4">
+  <section id="faq" class="bg-cream dark:bg-bg py-16 md:py-20 px-4">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl md:text-4xl text-ink mb-10 text-center">Common questions.</h2>
       <FAQ items={faqItems} />

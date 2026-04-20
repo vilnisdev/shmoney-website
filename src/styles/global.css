@@ -1,9 +1,16 @@
 @import "tailwindcss";
+@import "@fontsource/geist/400.css";
+@import "@fontsource/geist/700.css";
+@import "@fontsource/geist/900.css";
 @import "@fontsource-variable/inter";
 @import "@fontsource/fraunces/400.css";
 @import "@fontsource/fraunces/700.css";
 
+/* Class-based dark mode: adds .dark to <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
+  /* Light defaults */
   --color-navy:       #1e3a5f;
   --color-navy-dark:  #152d4a;
   --color-navy-light: #2a4d78;
@@ -12,13 +19,41 @@
   --color-muted:      #6b7280;
   --color-success:    #16a34a;
 
+  /* Semantic surface tokens */
+  --color-bg:         #f8f6f1;
+  --color-surface:    #ffffff;
+  --color-surface-2:  #f3f4f6;
+  --color-border:     #e5e7eb;
+  --color-border-2:   #d1d5db;
+  --color-subtle:     #9ca3af;
+
   --font-sans:    "InterVariable", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Fraunces", Georgia, ui-serif, serif;
 }
 
+/* Dark theme overrides — all set via .dark on <html> */
+html.dark {
+  --color-navy:       #3B82F6;
+  --color-navy-dark:  #2563EB;
+  --color-navy-light: #60A5FA;
+  --color-cream:      #111827;
+  --color-ink:        #FFFFFF;
+  --color-muted:      #94A3B8;
+  --color-success:    #22C55E;
+
+  --color-bg:         #0A0A0A;
+  --color-surface:    #111827;
+  --color-surface-2:  #1F2937;
+  --color-border:     #1F2937;
+  --color-border-2:   #374151;
+  --color-subtle:     #64748B;
+
+  --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
+}
+
 @layer base {
   html {
-    background-color: var(--color-cream);
+    background-color: var(--color-bg);
     color: var(--color-ink);
     font-family: var(--font-sans);
     scroll-behavior: smooth;
@@ -28,6 +63,13 @@
     font-family: var(--font-display);
     font-weight: 700;
     line-height: 1.2;
+    letter-spacing: 0em;
+  }
+
+  html.dark h1, html.dark h2, html.dark h3, html.dark h4 {
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
   }
 
   details > summary {
@@ -42,4 +84,21 @@
   a {
     color: inherit;
   }
+}
+
+/* Nav CTA button: white pill on dark nav (light) / blue solid (dark) */
+.nav-cta {
+  background-color: white;
+  color: var(--color-navy);
+  transition: background-color 150ms;
+}
+.nav-cta:hover {
+  background-color: var(--color-cream);
+}
+html.dark .nav-cta {
+  background-color: var(--color-navy);
+  color: white;
+}
+html.dark .nav-cta:hover {
+  background-color: var(--color-navy-dark);
 }

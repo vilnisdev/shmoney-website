@@ -8,13 +8,13 @@ import CTA from '../components/CTA.astro';
   description="Meet the founder — a Baltimore-based web designer focused exclusively on helping local small businesses get found online and win more customers."
 >
   <!-- INTRO -->
-  <section class="bg-cream py-16 md:py-20 px-4">
+  <section class="bg-cream dark:bg-bg py-16 md:py-20 px-4">
     <div class="max-w-4xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
         <!-- Photo -->
         <div class="md:col-span-1">
           <!-- TODO: Replace with a real founder headshot. Recommended: professional but approachable, Baltimore background preferred, 600x700px minimum. -->
-          <div class="bg-navy-light rounded-xl aspect-[3/4] flex items-center justify-center text-white opacity-30 border-2 border-dashed border-navy" role="img" aria-label="Founder photo placeholder">
+          <div class="bg-navy-light dark:bg-surface rounded-xl aspect-[3/4] flex items-center justify-center text-white opacity-30 border-2 border-dashed border-navy dark:border-border" role="img" aria-label="Founder photo placeholder">
             <div class="text-center text-sm px-4">
               <p>TODO: Founder photo</p>
               <p class="text-xs mt-1">600x700px recommended</p>
@@ -33,15 +33,12 @@ import CTA from '../components/CTA.astro';
           <!-- TODO: Replace all three paragraphs below with your own story in your own voice. -->
           <div class="space-y-5 text-muted leading-relaxed">
             <p>
-              <!-- TODO: Write 3–5 sentences about why you started this. Something like: "I've been building websites for [X] years. I started Shmoney because I kept seeing small businesses in Baltimore get ripped off by agencies that charged $10k for a site that looked like it was built in 2011 and then disappeared. I thought there had to be a better way." -->
               [TODO: Write your founding story here. Why did you start this? What frustrated you about how things were being done? What did you see happening to small businesses? Be specific — the more specific, the more credible.]
             </p>
             <p>
-              <!-- TODO: Write about your Baltimore connection. Why here specifically? Do you live here? Did you grow up here? Do you know the neighborhoods? Something like: "I grew up in Hampden. I know what it's like to watch a neighborhood business struggle. I know the difference between Highlandtown and Hunt Valley and why that matters for how you market yourself." -->
               [TODO: Write about your Baltimore connection. Specificity matters — neighborhoods, corridors, communities you know personally.]
             </p>
             <p>
-              <!-- TODO: Write about the kind of clients you want to work with. Something like: "I want to work with owner-operators — people who answer their own phones, who know every regular customer by name, who take real pride in their work. Not companies looking to 'scale their digital presence.' Real businesses doing real things for real people in Baltimore." -->
               [TODO: Write about the kind of clients you want. Who energizes you? What kind of work makes you feel like it matters?]
             </p>
           </div>
@@ -51,7 +48,7 @@ import CTA from '../components/CTA.astro';
   </section>
 
   <!-- WHY I'M DOING THIS -->
-  <section class="bg-white py-16 md:py-20 px-4">
+  <section class="bg-white dark:bg-surface py-16 md:py-20 px-4">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl md:text-4xl text-ink mb-6">Why I'm doing this — and why it's new.</h2>
       <div class="space-y-5 text-muted leading-relaxed">
@@ -69,7 +66,7 @@ import CTA from '../components/CTA.astro';
   </section>
 
   <!-- WHAT I BELIEVE -->
-  <section class="bg-cream py-16 md:py-20 px-4">
+  <section class="bg-cream dark:bg-bg py-16 md:py-20 px-4">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-3xl md:text-4xl text-ink mb-8">What I believe.</h2>
       <dl class="space-y-6">
@@ -96,7 +93,7 @@ import CTA from '../components/CTA.astro';
           },
         ].map(({ term, detail }) => (
           <div class="flex gap-4">
-            <span class="shrink-0 mt-1 text-success" aria-hidden="true">
+            <span class="shrink-0 mt-1 text-success dark:text-navy-light" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
