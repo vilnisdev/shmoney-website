@@ -8,11 +8,18 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-50 bg-navy shadow-sm">
+<header class="sticky top-0 z-50 bg-slate/95 dark:bg-bg/95 backdrop-blur-md border-b border-midnight dark:border-border shadow-sm dark:shadow-none">
   <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between" aria-label="Main navigation">
     <!-- Wordmark -->
-    <a href="/" class="font-display text-xl font-bold text-white hover:text-cream transition-colors" aria-label="Shmoney Web Design — home">
-      Shmoney Web Design
+    <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity" aria-label="VerumWeb — home">
+      <svg width="24" height="30" viewBox="0 0 50 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="0"  y="14" width="6" height="28" rx="2" fill="#12c4aa"/>
+        <rect x="11" y="6"  width="6" height="44" rx="2" fill="#12c4aa"/>
+        <rect x="22" y="18" width="6" height="20" rx="2" fill="#12c4aa" opacity="0.5"/>
+        <rect x="33" y="0"  width="6" height="56" rx="2" fill="#12c4aa"/>
+        <rect x="44" y="24" width="6" height="12" rx="2" fill="#12c4aa" opacity="0.3"/>
+      </svg>
+      <span class="font-display text-xl font-bold text-white dark:font-black dark:tracking-tight">VerumWeb</span>
     </a>
 
     <!-- Desktop links -->
@@ -21,7 +28,7 @@ const currentPath = Astro.url.pathname;
         <li>
           <a
             href={href}
-            class={`hover:text-cream transition-colors ${currentPath === href ? 'text-cream underline underline-offset-4' : ''}`}
+            class={`opacity-80 hover:opacity-100 transition-opacity ${currentPath === href ? 'opacity-100 underline underline-offset-4' : ''}`}
           >
             {label}
           </a>
@@ -30,7 +37,7 @@ const currentPath = Astro.url.pathname;
       <li>
         <a
           href="/audit"
-          class="bg-white text-navy px-4 py-2 rounded font-semibold hover:bg-cream transition-colors focus-visible:outline-2 focus-visible:outline-white"
+          class="nav-cta px-4 py-2 rounded font-semibold focus-visible:outline-2 focus-visible:outline-white"
         >
           Free Audit
         </a>
@@ -60,20 +67,20 @@ const currentPath = Astro.url.pathname;
   <!-- Mobile menu -->
   <div
     id="mobile-menu"
-    class="hidden md:hidden bg-navy border-t border-navy-light px-4 pb-4"
+    class="hidden md:hidden bg-slate dark:bg-bg border-t border-midnight dark:border-border px-4 pb-4"
     role="navigation"
     aria-label="Mobile navigation"
   >
     <ul class="flex flex-col gap-1 pt-3" role="list">
       {navLinks.map(({ href, label }) => (
         <li>
-          <a href={href} class="block py-2 text-white font-medium hover:text-cream transition-colors">
+          <a href={href} class="block py-2 text-white opacity-80 font-medium hover:opacity-100 transition-opacity">
             {label}
           </a>
         </li>
       ))}
       <li class="pt-2">
-        <a href="/audit" class="block bg-white text-navy px-4 py-2 rounded font-semibold text-center hover:bg-cream transition-colors">
+        <a href="/audit" class="nav-cta block px-4 py-2 rounded font-semibold text-center">
           Free Audit
         </a>
       </li>
