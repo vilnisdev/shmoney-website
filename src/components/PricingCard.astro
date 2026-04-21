@@ -2,6 +2,7 @@
 interface Props {
   tier: string;
   buildFee: string;
+  originalBuildFee?: string;
   monthly: string;
   features: string[];
   badge?: string;
@@ -13,6 +14,7 @@ interface Props {
 const {
   tier,
   buildFee,
+  originalBuildFee,
   monthly,
   features,
   badge,
@@ -37,6 +39,14 @@ const {
     <h3 class="text-xl font-bold mb-2" style="font-family: var(--font-sans);">
       {tier}
     </h3>
+    {originalBuildFee && (
+      <p class={`text-sm mb-1 ${highlighted ? 'text-cream opacity-60' : 'text-muted'}`}>
+        <span class="line-through">{originalBuildFee}</span>
+        <span class="ml-2 text-success font-semibold not-italic" style="text-decoration: none;">
+          {highlighted ? '' : 'Founding price'}
+        </span>
+      </p>
+    )}
     <div class="flex items-baseline gap-1">
       <span class="text-4xl font-bold">
         {buildFee}
