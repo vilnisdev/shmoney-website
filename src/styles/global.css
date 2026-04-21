@@ -10,17 +10,19 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  /* Light defaults */
-  --color-navy:       #1e3a5f;
-  --color-navy-dark:  #152d4a;
-  --color-navy-light: #2a4d78;
-  --color-cream:      #f8f6f1;
-  --color-ink:        #1a1a1a;
+  /* Light defaults — VerumWeb palette */
+  --color-navy:       #0d9e8a;
+  --color-navy-dark:  #0b8572;
+  --color-navy-light: #12c4aa;
+  --color-slate:      #1a2535;
+  --color-midnight:   #0b1a2a;
+  --color-cream:      #e4f7f4;
+  --color-ink:        #1a2535;
   --color-muted:      #6b7280;
   --color-success:    #16a34a;
 
   /* Semantic surface tokens */
-  --color-bg:         #f8f6f1;
+  --color-bg:         #f2f4f7;
   --color-surface:    #ffffff;
   --color-surface-2:  #f3f4f6;
   --color-border:     #e5e7eb;
@@ -33,19 +35,21 @@
 
 /* Dark theme overrides — all set via .dark on <html> */
 html.dark {
-  --color-navy:       #3B82F6;
-  --color-navy-dark:  #2563EB;
-  --color-navy-light: #60A5FA;
-  --color-cream:      #111827;
+  --color-navy:       #12c4aa;
+  --color-navy-dark:  #0fa893;
+  --color-navy-light: #4dd9c8;
+  --color-slate:      #0b1a2a;
+  --color-midnight:   #060e18;
+  --color-cream:      #0d1f33;
   --color-ink:        #FFFFFF;
   --color-muted:      #94A3B8;
   --color-success:    #22C55E;
 
-  --color-bg:         #0A0A0A;
-  --color-surface:    #111827;
-  --color-surface-2:  #1F2937;
-  --color-border:     #1F2937;
-  --color-border-2:   #374151;
+  --color-bg:         #0b1a2a;
+  --color-surface:    #112233;
+  --color-surface-2:  #1a2d40;
+  --color-border:     #1a2d40;
+  --color-border-2:   #253d52;
   --color-subtle:     #64748B;
 
   --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
@@ -86,14 +90,17 @@ html.dark {
   }
 }
 
-/* Nav CTA button: white pill on dark nav (light) / blue solid (dark) */
+/* Nav CTA button: white pill on dark nav (light) / teal solid (dark) */
 .nav-cta {
   background-color: white;
   color: var(--color-navy);
-  transition: background-color 150ms;
+  transition: background-color 150ms, transform 150ms;
 }
 .nav-cta:hover {
   background-color: var(--color-cream);
+}
+.nav-cta:active {
+  transform: scale(0.96);
 }
 html.dark .nav-cta {
   background-color: var(--color-navy);
@@ -101,4 +108,38 @@ html.dark .nav-cta {
 }
 html.dark .nav-cta:hover {
   background-color: var(--color-navy-dark);
+}
+
+/* Hero load animations */
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-in {
+  animation: heroIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Scroll-triggered fade-up */
+[data-fade] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-fade].visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  [data-fade] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

@@ -7,68 +7,81 @@ import CTA from '../components/CTA.astro';
   title="About"
   description="Meet the founder — a Baltimore-based web designer focused exclusively on helping local small businesses get found online and win more customers."
 >
-  <!-- INTRO -->
+  <!-- OUR STORY -->
   <section class="bg-cream dark:bg-bg py-16 md:py-20 px-4">
     <div class="max-w-4xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-        <!-- Photo -->
-        <div class="md:col-span-1">
-          <!-- TODO: Replace with a real founder headshot. Recommended: professional but approachable, Baltimore background preferred, 600x700px minimum. -->
-          <div class="bg-navy-light dark:bg-surface rounded-xl aspect-[3/4] flex items-center justify-center text-white opacity-30 border-2 border-dashed border-navy dark:border-border" role="img" aria-label="Founder photo placeholder">
-            <div class="text-center text-sm px-4">
-              <p>TODO: Founder photo</p>
-              <p class="text-xs mt-1">600x700px recommended</p>
-            </div>
-          </div>
-          <p class="text-center text-sm text-muted mt-3">
-            [Your Name] — Baltimore, MD
-            <!-- TODO: replace [Your Name] -->
+      <h1 class="text-3xl md:text-4xl text-ink mb-10">Our Story</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start mb-12">
+        <div class="space-y-5 text-muted leading-relaxed">
+          <p>
+            We started VerumWeb after noticing the same problem everywhere.
+          </p>
+          <p>
+            Great small businesses were getting overlooked online — not because they weren't good, but because their websites were outdated, nonexistent, or just not working for them. Meanwhile, competitors with weaker service were winning simply by showing up better online.
+          </p>
+          <p>
+            With how fast things are changing — especially with AI — that gap is only getting bigger.
+          </p>
+          <p>
+            We didn't want to build another agency that overcomplicates things. We started VerumWeb to make it simple for good businesses to look as strong online as they actually are — and to give them tools that will still matter a few years from now.
           </p>
         </div>
 
-        <!-- Bio -->
-        <div class="md:col-span-2">
-          <h1 class="text-3xl md:text-4xl text-ink mb-8">About this business.</h1>
-
-          <!-- TODO: Replace all three paragraphs below with your own story in your own voice. -->
-          <div class="space-y-5 text-muted leading-relaxed">
-            <p>
-              [TODO: Write your founding story here. Why did you start this? What frustrated you about how things were being done? What did you see happening to small businesses? Be specific — the more specific, the more credible.]
-            </p>
-            <p>
-              [TODO: Write about your Baltimore connection. Specificity matters — neighborhoods, corridors, communities you know personally.]
-            </p>
-            <p>
-              [TODO: Write about the kind of clients you want. Who energizes you? What kind of work makes you feel like it matters?]
-            </p>
+        <!-- Headshots -->
+        <div class="flex flex-col gap-6 items-center md:items-start">
+          <div class="flex flex-col items-center gap-2">
+            <div class="w-48 h-56 rounded-xl overflow-hidden">
+              <img src="/joshface.jpg" alt="Josh — co-founder" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <p class="text-sm text-muted text-center">Josh</p>
           </div>
+          <div class="flex flex-col items-center gap-2">
+            <div class="w-48 h-56 rounded-xl overflow-hidden">
+              <img src="/vilnisface.jpg" alt="Vilnis — co-founder" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <p class="text-sm text-muted text-center">Vilnis</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Baltimore Connection -->
+      <div class="mb-10">
+        <h2 class="text-2xl md:text-3xl text-ink mb-4">Our Baltimore Connection</h2>
+        <div class="space-y-4 text-muted leading-relaxed max-w-2xl">
+          <p>
+            We've spent the last few years in Baltimore, getting to know the city beyond just campus.
+          </p>
+          <p>
+            From Charles Village to Hampden and Canton, we've seen how many strong local businesses rely on word of mouth but don't have that same presence online.
+          </p>
+          <p>
+            We've talked to owners who know they need to improve digitally — they just don't know where to start or who to trust. That's exactly who we built this for.
+          </p>
+        </div>
+      </div>
+
+      <!-- Who We Work With -->
+      <div>
+        <h2 class="text-2xl md:text-3xl text-ink mb-4">Who We Work With</h2>
+        <div class="space-y-4 text-muted leading-relaxed max-w-2xl">
+          <p>
+            We work best with business owners who care about what they've built.
+          </p>
+          <p>
+            Contractors, auto shops, gyms, restaurants — the kinds of businesses that are already solid but just haven't caught up online yet.
+          </p>
+          <p>
+            We're not chasing big corporate clients. The work that matters to us is helping local businesses get more calls, more customers, and a website that actually works. Simple as that.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHY I'M DOING THIS -->
-  <section class="bg-white dark:bg-surface py-16 md:py-20 px-4">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl md:text-4xl text-ink mb-6">Why I'm doing this — and why it's new.</h2>
-      <div class="space-y-5 text-muted leading-relaxed">
-        <p>
-          Yes, this business is new. I don't have a portfolio of 50 client sites to show you. What I have is the skills to build a great site, a guarantee that removes your financial risk entirely, and a genuine interest in seeing Baltimore small businesses compete online the way they deserve to.
-        </p>
-        <p>
-          The guarantee isn't a marketing gimmick. It's how I'm choosing to stand behind my work at a stage where you have no reason to trust me yet. Live in 21 days or full refund. Not happy 30 days after launch? Full refund, plus I'll transfer your site to you free. That's real money on the line for me — which is exactly the point.
-        </p>
-        <p>
-          If you're one of the first five clients, you're also getting the founding client pricing — $1,500 build and $99/month — in exchange for a testimonial and permission to use your site as a case study. That's the deal, stated plainly.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHAT I BELIEVE -->
+  <!-- WHAT WE BELIEVE -->
   <section class="bg-cream dark:bg-bg py-16 md:py-20 px-4">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl md:text-4xl text-ink mb-8">What I believe.</h2>
+      <h2 class="text-3xl md:text-4xl text-ink mb-8">What we believe.</h2>
       <dl class="space-y-6">
         {[
           {

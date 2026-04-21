@@ -8,12 +8,12 @@ import FAQ from '../components/FAQ.astro';
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  name: 'Shmoney Web Design',
+  name: 'VerumWeb',
   description:
-    'Baltimore web design agency building fast, no-nonsense websites and providing monthly maintenance for local small businesses.',
-  url: 'https://shmoneywebdesign.com', // TODO: real domain
-  telephone: '[Phone]', // TODO: real phone number
-  email: '[Email]', // TODO: real email
+    'Baltimore web design agency building fast, effective websites and providing consulting and strategy for local small businesses.',
+  url: 'https://verumweb.com', // TODO: real domain
+  telephone: '+15857661711',
+  email: 'verumweb@outlook.com',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Baltimore',
@@ -28,23 +28,27 @@ const schema = {
   serviceType: 'Web Design and Development',
 };
 
-const starterFeatures = [
-  'Up to 5 pages',
-  'Mobile-optimized, fast design',
+const essentialFeatures = [
+  'Up to 6 pages',
+  'Mobile responsive design',
   'Contact form',
-  'Hosting, domain setup, SSL — all handled',
-  'Google Business Profile optimization',
-  'Monthly backups and security updates',
+  'Google Maps embed',
+  'Google Business Profile setup',
+  'Hosting, SSL, and monthly updates',
+  '30-day bug fix warranty',
 ];
 
-const standardFeatures = [
-  'Up to 7 pages',
-  'Everything in Starter',
-  'Booking or payment system integration',
-  'Basic local SEO setup',
-  'Monthly content updates (1 hr/mo)',
-  'Priority email support',
+const growthFeatures = [
+  'Up to 12 pages',
+  'Full SEO setup and analytics',
+  'Pricing and operations consulting',
+  '2 hrs consulting per month',
+  'Monthly performance report',
+  'Priority support and revisions',
 ];
+
+// ← Update this number as founding spots fill
+const foundingSpots = 10;
 
 const faqItems = [
   {
@@ -84,41 +88,49 @@ const faqItems = [
   jsonLd={schema}
 >
   <!-- HERO -->
-  <section id="hero" class="bg-cream dark:bg-bg py-16 md:py-24 px-4">
+  <section id="hero" class="relative bg-cream dark:bg-bg py-16 md:py-24 px-4 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="background: radial-gradient(ellipse 55% 60% at 80% 50%, rgba(13,158,138,0.08), transparent)"></div>
     <div class="max-w-5xl mx-auto">
-      <div class="max-w-3xl">
-        <p class="hidden dark:block text-navy-light text-sm font-semibold uppercase tracking-widest mb-4">Baltimore Web Design</p>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl text-ink leading-tight mb-6">
-          Baltimore small businesses deserve websites that actually bring in customers.
-        </h1>
-        <p class="text-lg md:text-xl text-muted leading-relaxed mb-8 max-w-2xl">
-          We build fast, no-nonsense websites for local businesses — and we handle the whole thing so you don't have to learn anything new.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 mb-8">
-          <a
-            href="/audit"
-            class="inline-block bg-navy text-white px-7 py-4 rounded font-semibold text-base hover:bg-navy-dark transition-colors text-center focus-visible:outline-2 focus-visible:outline-navy"
-          >
-            Get a free site audit
-          </a>
-          <a
-            href="#pricing"
-            class="inline-block border-2 border-navy text-navy dark:border-border-2 dark:text-muted px-7 py-4 rounded font-semibold text-base hover:bg-navy hover:text-white dark:hover:border-white dark:hover:text-white transition-colors text-center focus-visible:outline-2 focus-visible:outline-navy"
-          >
-            See pricing
-          </a>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
+        <div>
+          <p class="hero-in text-navy text-sm font-semibold uppercase tracking-widest mb-4" style="animation-delay:0ms">Baltimore Web Design</p>
+          <h1 class="hero-in text-4xl md:text-5xl lg:text-6xl text-ink leading-tight mb-6" style="animation-delay:80ms">
+            Your website should bring in customers.
+          </h1>
+          <p class="hero-in text-lg md:text-xl text-muted mb-8" style="animation-delay:160ms">
+            We build fast, effective websites for Baltimore businesses — and handle everything so you don't have to.
+          </p>
+          <div class="hero-in flex flex-col sm:flex-row gap-4 mb-8" style="animation-delay:240ms">
+            <a
+              href="/audit"
+              class="inline-block bg-navy text-white px-7 py-4 rounded-lg font-semibold text-base hover:bg-navy-dark active:scale-95 transition-all text-center focus-visible:outline-2 focus-visible:outline-navy"
+            >
+              Get a free site audit
+            </a>
+            <a
+              href="#pricing"
+              class="inline-block border-2 border-navy text-navy dark:border-border-2 dark:text-muted px-7 py-4 rounded-lg font-semibold text-base hover:bg-navy hover:text-white dark:hover:border-white dark:hover:text-white active:scale-95 transition-all text-center focus-visible:outline-2 focus-visible:outline-navy"
+            >
+              See pricing
+            </a>
+          </div>
+          <p class="hero-in text-sm text-muted flex items-center gap-1.5" style="animation-delay:300ms">
+            <svg class="shrink-0 text-navy" width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+            </svg>
+            Built in Baltimore. Serving businesses from Canton to Catonsville.
+          </p>
         </div>
-        <p class="text-sm text-muted flex items-center gap-1">
-          <svg class="shrink-0 text-navy" width="14" height="14" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-          </svg>
-          Built in Baltimore. Serving businesses from Canton to Catonsville.
-        </p>
-      </div>
 
-      <!-- TODO: Replace with a real Baltimore photo (e.g., a local storefront on Eastern Ave or Charles St). Recommended: 1200x500px, your own photo preferred over stock. -->
-      <div class="mt-12 bg-navy-light dark:bg-surface rounded-xl h-64 md:h-80 flex items-center justify-center border-2 border-dashed border-navy dark:border-border" role="img" aria-label="Baltimore photo placeholder">
-        <p class="text-white dark:text-subtle text-sm text-center px-4 opacity-40 dark:opacity-100">TODO: Replace with real Baltimore photo</p>
+        <div class="hero-in rounded-2xl overflow-hidden shadow-2xl h-72 md:h-[420px]" style="animation-delay:180ms">
+          <img
+            src="/skyline.jpg"
+            alt="Baltimore skyline"
+            class="w-full h-full object-cover"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -126,11 +138,11 @@ const faqItems = [
   <!-- PROBLEM -->
   <section id="problem" class="bg-white dark:bg-surface py-16 md:py-20 px-4">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl md:text-4xl text-ink mb-12 max-w-2xl">
+      <h2 class="text-3xl md:text-4xl text-ink mb-12 max-w-2xl" data-fade>
         If your "website" is a Facebook page, you're losing customers every day.
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div>
+        <div data-fade style="transition-delay:0ms">
           <div class="w-10 h-10 bg-cream dark:bg-surface-2 rounded-lg flex items-center justify-center mb-4" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navy">
               <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -141,7 +153,7 @@ const faqItems = [
             When someone needs a plumber in Dundalk or a hair salon in Towson, they open Google — not Facebook. If you don't show up in search results, that customer calls your competitor. A real website is how you show up.
           </p>
         </div>
-        <div>
+        <div data-fade style="transition-delay:100ms">
           <div class="w-10 h-10 bg-cream dark:bg-surface-2 rounded-lg flex items-center justify-center mb-4" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navy">
               <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
@@ -152,7 +164,7 @@ const faqItems = [
             A slow, broken, or outdated website doesn't just fail to help you — it actively costs you customers. People make snap judgments online. If your site looks abandoned, they assume your business is too.
           </p>
         </div>
-        <div>
+        <div data-fade style="transition-delay:200ms">
           <div class="w-10 h-10 bg-cream dark:bg-surface-2 rounded-lg flex items-center justify-center mb-4" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-navy">
               <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
@@ -171,7 +183,7 @@ const faqItems = [
   <section id="services" class="bg-cream dark:bg-bg py-16 md:py-20 px-4">
     <div class="max-w-5xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-        <div>
+        <div data-fade>
           <h2 class="text-3xl md:text-4xl text-ink mb-6">One simple offer.</h2>
           <p class="text-muted leading-relaxed mb-4">
             We don't do a hundred different things. We build fast, effective websites for local Baltimore businesses and keep them running. That's it.
@@ -180,7 +192,7 @@ const faqItems = [
             One point of contact. No handoffs. No surprise bills. The person who built your site is the same person who answers your emails.
           </p>
         </div>
-        <ul class="space-y-3" role="list">
+        <ul class="space-y-3" role="list" data-fade style="transition-delay:120ms">
           {[
             'Custom-designed website (5–7 pages typical)',
             'Mobile-optimized and fast — tested on real phones',
@@ -206,32 +218,79 @@ const faqItems = [
   <!-- PRICING -->
   <section id="pricing" class="bg-white dark:bg-surface py-16 md:py-20 px-4">
     <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-12">
+      <div class="text-center mb-12" data-fade>
         <h2 class="text-3xl md:text-4xl text-ink mb-4">Straightforward pricing. No surprises.</h2>
         <p class="text-muted max-w-xl mx-auto">
           Most agencies won't show you prices. We do — because you shouldn't have to sit through a sales call just to find out if you can afford it.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto" data-fade style="transition-delay:100ms">
         <PricingCard
-          tier="Starter"
+          tier="Essential"
           buildFee="$1,500"
           monthly="$99"
-          features={starterFeatures}
-          badge="Founding client pricing — first 5 clients only"
-          ctaHref="/audit"
-          ctaText="Claim this rate"
-        />
-        <PricingCard
-          tier="Standard"
-          buildFee="$2,500"
-          monthly="$179"
-          features={standardFeatures}
-          highlighted={true}
+          features={essentialFeatures}
           ctaHref="/audit"
           ctaText="Get started"
         />
+        <PricingCard
+          tier="Growth"
+          buildFee="$3,000"
+          monthly="$199"
+          features={growthFeatures}
+          highlighted={true}
+          badge="Recommended"
+          ctaHref="/audit"
+          ctaText="Get started"
+        />
+      </div>
+
+      <!-- Founding client callout -->
+      <div class="mt-10 max-w-3xl mx-auto rounded-xl border-2 border-navy bg-cream dark:bg-surface-2 dark:border-navy p-7">
+        <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-widest text-navy mb-1">Founding client offer — 10 spots only</p>
+            <h3 class="text-xl font-bold text-ink" style="font-family: var(--font-sans);">Lock in a reduced rate — for life.</h3>
+            <p class="text-sm text-muted mt-1">First 10 clients get permanently discounted pricing. Rate never increases.</p>
+          </div>
+          <div class="shrink-0 text-center bg-navy text-white rounded-lg px-5 py-3 self-start">
+            <span class="block text-3xl font-bold leading-none">{foundingSpots}</span>
+            <span class="text-xs opacity-80 whitespace-nowrap">spots left</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-white dark:bg-surface rounded-lg p-5 border border-gray-200 dark:border-border">
+            <p class="text-xs font-bold uppercase tracking-wider text-navy mb-2">Essential</p>
+            <div class="flex items-baseline gap-1.5 mb-0.5">
+              <span class="text-2xl font-bold text-ink">$500</span>
+              <span class="text-sm text-muted">setup</span>
+            </div>
+            <p class="text-sm text-muted mb-4">then $79/month — locked for life</p>
+            <a
+              href="/audit"
+              class="block text-center px-4 py-2.5 rounded font-semibold text-sm bg-navy text-white hover:bg-navy-dark transition-colors focus-visible:outline-2 focus-visible:outline-navy"
+            >
+              Claim Essential spot
+            </a>
+          </div>
+
+          <div class="bg-white dark:bg-surface rounded-lg p-5 border border-gray-200 dark:border-border">
+            <p class="text-xs font-bold uppercase tracking-wider text-navy mb-2">Growth</p>
+            <div class="flex items-baseline gap-1.5 mb-0.5">
+              <span class="text-2xl font-bold text-ink">$1,000</span>
+              <span class="text-sm text-muted">setup</span>
+            </div>
+            <p class="text-sm text-muted mb-4">then $149/month — locked for life</p>
+            <a
+              href="/audit"
+              class="block text-center px-4 py-2.5 rounded font-semibold text-sm bg-navy text-white hover:bg-navy-dark transition-colors focus-visible:outline-2 focus-visible:outline-navy"
+            >
+              Claim Growth spot
+            </a>
+          </div>
+        </div>
       </div>
 
       <p class="text-center mt-8 text-sm text-muted">

@@ -21,7 +21,7 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(ogImage, Astro.site);
-const fullTitle = `${title} | Shmoney Web Design`;
+const fullTitle = `${title} | VerumWeb`;
 ---
 
 <!doctype html>
@@ -43,7 +43,7 @@ const fullTitle = `${title} | Shmoney Web Design`;
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageURL} />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Shmoney Web Design" />
+    <meta property="og:site_name" content="VerumWeb" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -59,7 +59,7 @@ const fullTitle = `${title} | Shmoney Web Design`;
 
     <!-- Analytics placeholder -->
     <!-- TODO: uncomment and set data-domain once Plausible or Umami account is created -->
-    <!-- <script defer data-domain="shmoneywebdesign.com" src="https://plausible.io/js/script.js"></script> -->
+    <!-- <script defer data-domain="verumweb.com" src="https://plausible.io/js/script.js"></script> -->
 
     <meta name="generator" content={Astro.generator} />
   </head>
@@ -99,6 +99,25 @@ const fullTitle = `${title} | Shmoney Web Design`;
     </button>
   </body>
 </html>
+
+<script>
+  // Scroll-triggered fade-up
+  const fadeEls = document.querySelectorAll('[data-fade]');
+  if (fadeEls.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    fadeEls.forEach((el) => io.observe(el));
+  }
+</script>
 
 <script>
   const html = document.documentElement;

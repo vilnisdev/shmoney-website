@@ -22,10 +22,10 @@ const {
 } = Astro.props;
 ---
 
-<div class={`relative flex flex-col rounded-xl p-8 ${
+<div class={`relative flex flex-col rounded-xl p-8 transition-all duration-200 hover:-translate-y-1.5 ${
   highlighted
-    ? 'bg-navy text-white dark:bg-surface shadow-2xl ring-2 ring-navy dark:ring-navy'
-    : 'bg-white text-ink dark:bg-surface border border-gray-200 dark:border-border shadow-sm'
+    ? 'bg-navy text-white dark:bg-surface shadow-2xl ring-2 ring-navy dark:ring-navy hover:shadow-[0_20px_60px_-10px_rgba(13,158,138,0.35)]'
+    : 'bg-white text-ink dark:bg-surface border border-gray-200 dark:border-border shadow-sm hover:shadow-xl'
 }`}>
   {badge && (
     <span class="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap bg-success text-white">

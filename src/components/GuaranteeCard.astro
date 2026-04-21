@@ -8,7 +8,7 @@ interface Props {
 const { number, headline, body } = Astro.props;
 ---
 
-<div class="flex gap-5 bg-white dark:bg-surface border-l-4 border-success dark:border-navy rounded-r-lg p-6 shadow-sm dark:shadow-none">
+<div class="flex gap-5 bg-white dark:bg-surface border-l-4 border-success dark:border-navy rounded-r-lg p-6 shadow-sm dark:shadow-none transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md">
   <span class="text-4xl font-bold text-success dark:text-navy-light shrink-0 leading-none" style="font-family: var(--font-display);">
     {number}
   </span>
